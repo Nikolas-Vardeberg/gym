@@ -23,6 +23,7 @@ export default defineType({
                 defineArrayMember({ type: "hero"}),
                 defineArrayMember({ type: "news"}),
                 defineArrayMember({ type: "service"}),
+                defineArrayMember({ type: "mediaModule"}),
             ]
         })
     ]
