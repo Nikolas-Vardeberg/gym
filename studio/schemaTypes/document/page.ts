@@ -20,7 +20,8 @@ export default defineType({
             name: "sections",
             title: "Sections",
             of: [
-                defineArrayMember({ type: "hero"})
+                defineArrayMember({ type: "hero"}),
+                defineArrayMember({ type: "news"})
             ]
         })
     ]
