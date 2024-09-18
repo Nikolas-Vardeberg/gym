@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { client } from "../utils/sanity/client";
+import { pagesBySlugQuery, test } from "../utils/sanity/querys";
 
 
 interface PageProps {
@@ -7,14 +9,20 @@ interface PageProps {
 
 export default async function PageSlugRoute(props: PageProps) {
     const { params } = props
- 
-    if(!params.slug) {
-        notFound();
-    }
 
+    console.log(await client.fetch(pagesBySlugQuery, { slug: params.slug }));
+
+    console.log(await client.fetch(test, {slug: params.slug}))
+
+    console.log("params.slug", params.slug)
+
+    const data = await client.fetch(pagesBySlugQuery, {slug: params.slug})
+
+    console.log(data);
+ 
     return(
         <div>
-            slug page
+            <h1>{data?.slug}</h1>
         </div>
     )
 }

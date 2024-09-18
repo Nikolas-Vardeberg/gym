@@ -1,6 +1,3 @@
-import { browser } from "process";
-import { CgBrowser } from "react-icons/cg";
-
 
 export const deskStructure = (S, context) =>
     S.list()
