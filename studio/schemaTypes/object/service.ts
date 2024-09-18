@@ -42,13 +42,11 @@ export default defineType({
         select: {
             title: 'serviceItems[0].heading',
             media: 'serviceItems[0].image',
-            subtite: 'serviceItems[0].description',
         },
-        prepare({ title, media, subtite }) {
+        prepare({ title, media }) {
             return {
                 title: title || "No Heading",
                 media: media,
-                subtitle: subtite || "No Description",
             }
         }
     }

@@ -5,7 +5,25 @@ export default defineType({
     type: "document",
     name: "page",
     title: "Page",
+    groups: [
+        {
+            name: "page",
+            title: "Page",
+            default: true,
+        },
+        {
+            name: "seo",
+            title: "Seo",
+            default: false,
+        },
+    ],
     fields: [
+        defineField({
+            title: "Seo",
+            name: "seo",
+            type: "seoMetaFields",
+            group: "seo",
+        }),
         defineField({
             type: "slug",
             name: "slug",
@@ -14,6 +32,7 @@ export default defineType({
                 source: "title",
             },
             validation: (rule) => rule.required(),
+            group: "page",
         }),
         defineField({
             type: "array",
@@ -24,7 +43,8 @@ export default defineType({
                 defineArrayMember({ type: "news"}),
                 defineArrayMember({ type: "service"}),
                 defineArrayMember({ type: "mediaModule"}),
-            ]
+            ],
+            group: "page",
         })
     ]
 })
