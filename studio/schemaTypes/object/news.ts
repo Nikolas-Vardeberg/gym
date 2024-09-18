@@ -1,9 +1,12 @@
 import { defineField, defineType } from "sanity";
+import { FaRegNewspaper } from "react-icons/fa";
+
 
 export default defineType({
     type: "object",
     name: "news",
     title: "Nyheter",
+    icon: FaRegNewspaper,
     fields: [
         defineField({
             type: "array",

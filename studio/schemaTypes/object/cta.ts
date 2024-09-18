@@ -1,10 +1,12 @@
 import { defineField, defineType } from "sanity";
+import { CgPlayButtonR } from "react-icons/cg";
 
 
 export default defineType({
     name: "cta",
     title: "Cta",
     type: "object",
+    icon: CgPlayButtonR,
     fields: [
         defineField({
             type: "boolean",

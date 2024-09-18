@@ -1,10 +1,12 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { RiPagesLine } from "react-icons/ri";
 
 
 export default defineType({
     type: "document",
     name: "page",
     title: "Page",
+    icon: RiPagesLine,
     groups: [
         {
             name: "page",

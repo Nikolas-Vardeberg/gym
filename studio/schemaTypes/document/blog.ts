@@ -1,11 +1,11 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
-
-
+import { RiArticleLine } from "react-icons/ri";
 
 export default defineType({
     name: "blog",
     title: "Blog",
     type: "document",
+    icon: RiArticleLine,
     groups: [
         {
             name: "page",

@@ -1,9 +1,12 @@
 import { defineField, defineType } from "sanity";
+import { LiaToolsSolid } from "react-icons/lia";
+
 
 export default defineType({
     type: "object",
     name: "service",
     title: "Service",
+    icon: LiaToolsSolid,
     fields: [
         defineField({
             type: "array",

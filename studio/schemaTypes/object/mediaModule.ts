@@ -1,10 +1,13 @@
 import { defineField, defineType } from "sanity";
+import { LiaImages } from "react-icons/lia";
+
 
 
 export default defineType({
     name: "mediaModule",
     type: "object",
     title: "Media Module",
+    icon: LiaImages,
     fields: [
         defineField({
             type: 'image',
