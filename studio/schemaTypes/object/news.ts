@@ -27,14 +27,10 @@ export default defineType({
                             title: "Image",
                         }),
                         defineField({
+                            title: "Parent Categories",
+                            name: "parents",
                             type: "array",
-                            title: "Tag",
-                            name: "tag",
-                            of: [
-                                {
-                                    type: "string",
-                                },
-                            ],
+                            of: [{type: "reference", to:[{type:"category"}]}],
                             options: {
                                 layout: "tags",
                             },
