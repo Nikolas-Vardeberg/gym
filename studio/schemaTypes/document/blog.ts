@@ -37,7 +37,6 @@ export default defineType({
             name: "sections",
             title: "Sections",
             of: [
-                defineArrayMember({ type: "news"}),
                 defineArrayMember({ type: "textBlock"}),
                 defineArrayMember({ type: "imageBlock"})
             ],

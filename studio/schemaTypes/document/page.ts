@@ -42,9 +42,9 @@ export default defineType({
             title: "Sections",
             of: [
                 defineArrayMember({ type: "hero"}),
-                defineArrayMember({ type: "news"}),
                 defineArrayMember({ type: "service"}),
                 defineArrayMember({ type: "mediaModule"}),
+                defineArrayMember({ type: "newsBlock"})
             ],
             group: "page",
         })
