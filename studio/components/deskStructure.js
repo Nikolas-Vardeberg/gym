@@ -14,6 +14,7 @@ export const deskStructure = (S, context) =>
                         .title("Sider")
                         .items([
                             S.documentTypeListItem("page").title("Sider"),
+                            S.documentTypeListItem("blog").title("Artikkler"),
                         ]),
                 ),
             S.divider(),
