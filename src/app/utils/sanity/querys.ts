@@ -4,7 +4,19 @@ import { groq } from "next-sanity"
 export const pagesBySlugQuery = groq`
   *[_type == "page" && slug.current == $slug][0] {
     ...,
-    sections,
+    sections[] {
+      ...,
+      _type == "newsBlock" => {
+      ...,
+      newsItem[]-> {
+      ...,
+        parents[]-> {
+          title,
+          slug,
+        }
+      }
+      }
+    },
     "slug": slug.current,
   }
 `

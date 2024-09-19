@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { client } from "../utils/sanity/client";
 import { pagesBySlugQuery, test } from "../utils/sanity/querys";
 import { Service } from "../components/Service";
+import { MediaModule } from "../components/MediaModule";
+import { NewsBlock } from "../components/NewsBlock";
 
 
 interface PageProps {
@@ -23,9 +25,6 @@ export default async function PageSlugRoute(props: PageProps) {
         return notFound()
     }
 
-    console.log(data);
-
- 
     return(
         <div>
             {
@@ -33,6 +32,8 @@ export default async function PageSlugRoute(props: PageProps) {
                     switch (section._type) {
                         case "service":
                             return <Service key={section._key} serviceItems={section.serviceItems} />
+                        case "newsBlock":
+                            return <NewsBlock key={section._key} newsItem={section.newsItem} />
                     }
                 })
             }
