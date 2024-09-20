@@ -4,6 +4,7 @@ import { pagesBySlugQuery } from "../utils/sanity/querys";
 import { Service } from "../components/Service";
 import { NewsBlock } from "../components/NewsBlock";
 import { MediaModule } from "../components/MediaModule";
+import { Hero } from "../components/Hero";
 
 
 interface PageProps {
@@ -30,6 +31,8 @@ export default async function PageSlugRoute(props: PageProps) {
             {
                 data?.sections && data?.sections.map((section: any) => {
                     switch (section._type) {
+                        case "hero":
+                            return <Hero key={section._key} heroItemsProps={section}  />
                         case "service":
                             return <Service key={section._key} serviceItems={section.serviceItems} />
                         case "mediaModule":
