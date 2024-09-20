@@ -7,12 +7,9 @@ export default defineType({
     type: "document",
     fields: [
         defineField({
-            type: "image",
-            options: {
-                hotspot: true,
-            },
-            name: "image",
-            title: "Image",
+            name: "imageBlock",
+            title: "ImageBlock",
+            type: "imageBlock"
         }),
         defineField({
             title: "Parent Categories",

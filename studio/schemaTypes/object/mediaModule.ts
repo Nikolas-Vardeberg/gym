@@ -10,13 +10,9 @@ export default defineType({
     icon: LiaImages,
     fields: [
         defineField({
-            type: 'image',
-            options: {
-              hotspot: true,
-            },
-            name: 'image',
-            title: 'Image',
-            validation: (rule) => rule.required(),
+            name: "imageBlock",
+            title: "ImageBlock",
+            type: "imageBlock"
         }),
         defineField({
             type: 'boolean',

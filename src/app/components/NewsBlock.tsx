@@ -3,7 +3,10 @@ import { urlFor } from "../utils/sanity/image";
 import Link from "next/link";
 
 export type NewsItem = {
-    image: any
+    imageBlock: {
+        image: any;
+        alt: string;
+    }
     heading: string
     description: string;
     parents: {
@@ -28,9 +31,9 @@ export const NewsBlock = ({newsItem}: Props) => {
                         return(
                             <div key={i} className="w-full h-full flex flex-col space-y-4 overflow-hidden hover:scale-105 transition-all duration-150">
                                  <Image
-                                    alt="newsItem"
+                                    alt={items.imageBlock.alt}
                                     className="object-cover w-full h-[350px]"
-                                    src={items.image ? urlFor(items.image).url(): ""}
+                                    src={items.imageBlock.image ? urlFor(items.imageBlock.image).url(): ""}
                                     width={300}
                                     height={300}
                                 />

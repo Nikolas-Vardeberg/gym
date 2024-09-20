@@ -3,7 +3,10 @@ import { urlFor } from "../utils/sanity/image";
 import Link from "next/link";
 
 export type MediaModuleItems = {
-    image: any;
+    imageBlock: {
+        image: any;
+        alt: string;
+    }
     heading: string;
     body: string;
     imageOnRight: boolean;
@@ -32,8 +35,8 @@ export const MediaModule = ({mediaModuleItems}: Props) => {
                         <div key={x} className="grid grid-cols-1 lg:grid-cols-2 mx-auto justify-between overflow-hidden items-center bg-purple-200 border-purple-800 border rounded-lg">
                         <div className="w-full bg-green-500">
                             <Image 
-                                alt="Jente som trenger"
-                                 src={t.image ? urlFor(t.image).url(): ""}
+                                alt={t.imageBlock.alt}
+                                src={t.imageBlock.image ? urlFor(t.imageBlock.image).url(): ""}
                                 className="w-full lg:h-[500px] h-[350px] object-cover"
                                 height={400}
                                 width={400}

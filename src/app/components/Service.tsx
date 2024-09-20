@@ -4,12 +4,16 @@ import Link from "next/link";
 
 export type ServiceItem = {
     heading: string;
+    imageBlock: {
+        image: any;
+        alt: string;
+    }
     image: any;
     cta: {
         text: string;
         url: string;
         hasPrimaryCta: boolean;
-    }[];
+    };
 }
 
 export type Service = {
@@ -27,9 +31,9 @@ export const Service = ({serviceItems}: Props) => {
                         return(
                             <div className="w-full h-full flex flex-col flex-grow mx-auto">
                                 <Image
-                                    alt="serviceItems"
+                                    alt={items.imageBlock.alt}
                                     className="object-cover w-full h-[350px]"
-                                    src={items.image ? urlFor(items.image).url(): ""}
+                                    src={items.imageBlock.image ? urlFor(items.imageBlock.image).url(): ""}
                                     width={300}
                                     height={300}
                                 />

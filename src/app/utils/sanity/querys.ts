@@ -21,6 +21,8 @@ export const pagesBySlugQuery = groq`
   }
 `
 
+
+
 export const pagePathsQuery = groq`
   *[_type == "page" && slug.current != null].slug.current
 `
@@ -28,13 +30,13 @@ export const pagePathsQuery = groq`
 
 export const getAllBlogsQuery = groq`
   *[_type == "news"] {
-  ...,
-  newsItem[]-> {
-      ...,
-        parents[]-> {
-          title,
-          slug,
-        }
-      }
+ ...,
+  parents[]-> {
+    title,
+  }
 }
+`
+
+export const getHomePageQuery = groq`
+*[_type == 'home']
 `

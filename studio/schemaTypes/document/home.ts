@@ -28,14 +28,10 @@ export default defineType({
             group: "seo",
         }),
         defineField({
-            type: "slug",
-            name: "slug",
-            title: "Slug",
-            options: {
-                source: "title",
-            },
-            validation: (rule) => rule.required(),
-            group: "page",
+            name: "title",
+            title: "Title",
+            type: "string",
+            initialValue: "Home",
         }),
         defineField({
             type: "array",

@@ -19,12 +19,9 @@ export default defineType({
                     title: "Service Items",
                     fields: [
                         defineField({
-                            type: "image",
-                            options: {
-                                hotspot: true,
-                            },
-                            name: "image",
-                            title: "Image",
+                            name: "imageBlock",
+                            title: "ImageBlock",
+                            type: "imageBlock"
                         }),
                         defineField({
                             type: "string",
