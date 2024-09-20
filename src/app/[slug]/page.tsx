@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import { client } from "../utils/sanity/client";
-import { pagesBySlugQuery, test } from "../utils/sanity/querys";
+import { pagesBySlugQuery } from "../utils/sanity/querys";
 import { Service } from "../components/Service";
-import { MediaModule } from "../components/MediaModule";
 import { NewsBlock } from "../components/NewsBlock";
 
 
@@ -17,7 +16,7 @@ export default async function PageSlugRoute(props: PageProps) {
 
     const data = await client.fetch(pagesBySlugQuery, {slug: params.slug}, {
         next: {
-            revalidate: 10 // seconds
+            revalidate: 10 
         }
     })
 
@@ -37,6 +36,9 @@ export default async function PageSlugRoute(props: PageProps) {
                     }
                 })
             }
+            <pre>
+                {JSON.stringify(data)}
+            </pre>
         </div>
     )
 }

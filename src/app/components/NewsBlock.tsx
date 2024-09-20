@@ -37,11 +37,11 @@ export const NewsBlock = ({newsItem}: Props) => {
                                     width={300}
                                     height={300}
                                 />
-                                {items.parents?.map(x => (
-                                    <div className="flex flex-row gap-1">
+                                <div className="flex flex-row flex-grow gap-1 ">
+                                    {items.parents?.map(x => (
                                         <div className="bg-purple-300 text-purple-800 text-sm items-center justify-center flex px-4 py-2 uppercase w-fit rounded-full">{x.title}</div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                                 <h2 className="font-bold text-2xl leading-normal text-black">{items.heading}</h2>
                                 <p className="font-light text-base md:text-lg text-black">{items.description}</p>
                             </div>

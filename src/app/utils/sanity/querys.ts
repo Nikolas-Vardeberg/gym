@@ -25,10 +25,16 @@ export const pagePathsQuery = groq`
   *[_type == "page" && slug.current != null].slug.current
 `
 
-export const test = groq`
-*[_type == "page" && slug.current == $slug][0] {
+
+export const getAllBlogsQuery = groq`
+  *[_type == "news"] {
   ...,
-  sections,
-  "slug": slug.current,
-} | order(_updatedAt desc)[0]
-s`
+  newsItem[]-> {
+      ...,
+        parents[]-> {
+          title,
+          slug,
+        }
+      }
+}
+`
