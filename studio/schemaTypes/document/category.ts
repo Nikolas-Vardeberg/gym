@@ -24,5 +24,16 @@ export default defineType({
                 maxLength: 96,
             }
         }),
+        defineField({
+            type: "array",
+            name: "description",
+            title: "Description",
+            of: [
+              {
+                type: "block",
+              }
+            ],
+            validation: (rule) => rule.required().min(1),
+        })       
     ]
 })

@@ -16,5 +16,10 @@ export default defineType({
             name: "image",
             title: "Image",
         }),
+        defineField({
+            type: "string",
+            name: "alt",
+            title: "Alt",
+        })
     ]
 })
