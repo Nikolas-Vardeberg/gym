@@ -22,7 +22,7 @@ export const Service = ({serviceItems}: Props) => {
     return(
         <div className="w-full mx-auto bg-inherit py-4 md:py-10 px-8 lg:px-0">
             <div className="container flex space-y-7 flex-col justify-center items-center mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6 justify-between">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-6 justify-between">
                     {serviceItems?.map((items, i) => {
                         return(
                             <div className="w-full h-full flex flex-col flex-grow mx-auto">

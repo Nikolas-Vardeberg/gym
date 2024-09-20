@@ -3,6 +3,7 @@ import { client } from "../utils/sanity/client";
 import { pagesBySlugQuery } from "../utils/sanity/querys";
 import { Service } from "../components/Service";
 import { NewsBlock } from "../components/NewsBlock";
+import { MediaModule } from "../components/MediaModule";
 
 
 interface PageProps {
@@ -31,14 +32,13 @@ export default async function PageSlugRoute(props: PageProps) {
                     switch (section._type) {
                         case "service":
                             return <Service key={section._key} serviceItems={section.serviceItems} />
+                        case "mediaModule":
+                            return <MediaModule key={section._key} mediaModuleItems={section} />
                         case "newsBlock":
                             return <NewsBlock key={section._key} newsItem={section.newsItem} />
                     }
                 })
             }
-            <pre>
-                {JSON.stringify(data)}
-            </pre>
         </div>
     )
 }

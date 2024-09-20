@@ -19,9 +19,6 @@ export type NewsBlock = {
 export type Props = NewsBlock
 
 export const NewsBlock = ({newsItem}: Props) => {
-
-    console.log(newsItem)
-
     return(
         <div className="w-full mx-auto bg-inherit py-4 md:py-10 px-8 lg:px-0">
             <div className="container flex space-y-7 flex-col justify-center items-center mx-auto">
