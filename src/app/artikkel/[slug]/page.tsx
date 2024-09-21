@@ -2,6 +2,7 @@ import { client } from "@/app/utils/sanity/client";
 import { notFound } from "next/navigation";
 import { blogsBySlugQuery } from "@/app/utils/sanity/querys";
 import TextBlock from "@/app/components/blog/TextBlock";
+import ImageBlock from "@/app/components/blog/ImageBlock";
 
 
 interface PageProps {
@@ -32,12 +33,9 @@ export default async function blogBySlugRoute(props: PageProps) {
                     case "textBlock":
                         return <TextBlock key={section._key} content={section.content} />
                     case "imageBlock":
-                        return <h1>nettsiden har image</h1>
+                        return <ImageBlock key={section._key} imageBlock={section}   />
                 }
             })}
-            <pre>
-                {JSON.stringify((data.sections))}
-            </pre>
         </div>
     )
   }
