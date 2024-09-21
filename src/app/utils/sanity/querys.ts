@@ -21,7 +21,15 @@ export const pagesBySlugQuery = groq`
   }
 `
 
-
+export const blogsBySlugQuery = groq`
+  *[_type == "blog" && slug.current == $slug][0]{
+    ...,
+    sections[] {
+      ...,
+    },
+    "slug": slug.current,
+  }
+`
 
 export const pagePathsQuery = groq`
   *[_type == "page" && slug.current != null].slug.current
