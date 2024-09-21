@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { blogsBySlugQuery } from "@/app/utils/sanity/querys";
 import TextBlock from "@/app/components/blog/TextBlock";
 import ImageBlock from "@/app/components/blog/ImageBlock";
+import Membership from "@/app/components/static/Membership";
 
 
 interface PageProps {
@@ -36,6 +37,7 @@ export default async function blogBySlugRoute(props: PageProps) {
                         return <ImageBlock key={section._key} imageBlock={section}   />
                 }
             })}
+            <Membership />
         </div>
     )
   }
