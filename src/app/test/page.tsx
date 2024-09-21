@@ -1,4 +1,4 @@
-import { getUser } from "@/db/schema";
+import { getUser } from "../../../db/queries";
 
 
 
