@@ -30,42 +30,41 @@ export default async function blogPageRoute({ newsItem }: Props) {
   console.log(data);
 
   return (
-    <div className="w-full mx-auto bg-inherit py-4 md:py-10 px-8 lg:px-0">
-      <div className="container flex space-y-7 flex-col justify-center items-center mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-6 justify-between">
-          {data?.map((item: any, x: any) => {
-            return (
-              <div
-                key={x}
-                className="w-full h-full flex flex-col space-y-4 overflow-hidden hover:scale-105 transition-all duration-150"
-              >
-                <Image
-                  alt={item.imageBlock.alt}
-                  className="object-cover w-full h-[350px]"
-                  src={
-                    item.imageBlock.image
-                      ? urlFor(item.imageBlock.image).url()
-                      : ""
-                  }
-                  width={300}
-                  height={300}
-                />
-                <div className="flex flex-row flex-grow gap-1 ">
-                  {item.parents?.map((t) => (
-                    <div className="bg-purple-300 text-purple-800 text-sm items-center justify-center flex px-4 py-2 uppercase w-fit rounded-full">
-                      {t.title}
-                    </div>
-                  ))}
-                </div>
-                <h2 className="font-bold text-2xl leading-normal text-black">
-                  {item.heading}
-                </h2>
-                <p className="font-light text-base md:text-lg text-black">
-                  {item.description}
-                </p>
-              </div>
-            );
-          })}
+    <div className="w-full mx-auto bg-inherit py-8 md:py-10 px-8 lg:px-0">
+            <div className="container flex flex-col justify-center items-center mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-between gap-6">
+                  {data?.map((i: any, x: any) => {
+                    return (
+                      <div key={x} className="w-full h-full flex flex-col overflow-hidden transition-all hover:scale-105 duration-200 group gap-3">
+                        <Image
+                          alt={i.imageBlock.alt}
+                          className="object-cover w-full h-[350px] aspect-square"
+                          src={
+                            i.imageBlock.image
+                            ? urlFor(i.imageBlock.image).url()
+                            : ""
+                          }
+                          width={300}
+                          height={300}
+                        />
+                          <div className="flex flex-col gap-3 items-start justify-center mx-auto bg-inherit ">
+                             <div className="flex-row inline-flex flex-grow gap-1 w-full">
+                                {i.parents?.map((t: any) => (
+                                  <div key={t} className="bg-blue-600 text-white font-normal text-sm items-center justify-center flex px-6 py-2 uppercase w-fit rounded-full">
+                                    {t.title}
+                                   </div>
+                                ))}
+                                </div>
+                                   <h2 className="text-3xl line-clamp-2  leading-normal !font-bold !text-black group-hover:underline underline-offset-4 ">
+                                    {i.heading}
+                                   </h2>
+                                  <p className="text-base md:text-lg font-normal text-black overflow-hidden">
+                                    {i.description}
+                                  </p>
+                                </div>
+                            </div>
+                          );
+                        })}
         </div>
       </div>
     </div>

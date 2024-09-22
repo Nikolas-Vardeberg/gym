@@ -46,5 +46,20 @@ export const getAllBlogsQuery = groq`
 `
 
 export const getHomePageQuery = groq`
-*[_type == 'home']
+*[_type == "home"] {
+ ...,
+    sections[] {
+      ...,
+      _type == "newsBlock" => {
+      ...,
+      newsItem[]-> {
+      ...,
+        parents[]-> {
+          title,
+          slug,
+        }
+      }
+      }
+}
+}
 `

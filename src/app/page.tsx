@@ -5,10 +5,6 @@ import { Service } from "./components/Service"
 import { client } from "./utils/sanity/client"
 import { getHomePageQuery } from "./utils/sanity/querys"
 
-
-
-
-
 export default async function homePageRoute() {
     const data = await client.fetch(getHomePageQuery, {
     })
@@ -18,25 +14,18 @@ export default async function homePageRoute() {
     }
 
     console.log(data)
+    console.log(data[0].sections);
     return(
         <div>
-            <pre>
-                {JSON.stringify(data)}
-            </pre>
-            {
-                data?.sections && data?.sections.map((section: any) => {
-                    switch (section._type) {
+                  {data[0]?.sections && data[0]?.sections?.map((section: any) => {
+                      switch (section._type) {
                         case "hero":
-                            return <Hero key={section._key} heroItemsProps={section}  />
-                        case "service":
-                            return <Service key={section._key} serviceItems={section.serviceItems} />
-                        case "mediaModule":
-                            return <MediaModule key={section._key} mediaModuleItems={section} />
-                        case "newsBlock":
-                            return <NewsBlock key={section._key} newsItem={section.newsItem} />
-                    }
-                })
-            }
+                          return <Hero key={section._key} heroItemsProps={section} />
+                      }
+                    })}
+            <pre>
+                {JSON.stringify(data, undefined, 2)}
+            </pre>
         </div>
     )
 }

@@ -8,7 +8,6 @@ export type ServiceItem = {
         image: any;
         alt: string;
     }
-    image: any;
     cta: {
         text: string;
         url: string;
@@ -29,7 +28,7 @@ export const Service = ({serviceItems}: Props) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-6 justify-between">
                     {serviceItems?.map((items, i) => {
                         return(
-                            <div className="w-full h-full flex flex-col flex-grow mx-auto">
+                            <div className="w-full h-full flex flex-col flex-grow mx-auto" key={i}>
                                 <Image
                                     alt={items.imageBlock.alt}
                                     className="object-cover w-full h-[350px]"
