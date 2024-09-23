@@ -27,7 +27,7 @@ export const Hero = ({ heroItemsProps }: Props) => {
     <div className="w-full h-screen">
       {itemsArray.map((t, x) => (
         <>
-          <div className="relative w-full h-screen">
+          <div key={x} className="relative w-full h-screen">
             <Image
               src={t.backgroundImage ? urlFor(t.backgroundImage).url() : ""}
               height={1200}

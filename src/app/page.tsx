@@ -22,11 +22,14 @@ export default async function homePageRoute() {
                       switch (section._type) {
                         case "hero":
                           return <Hero key={section._key} heroItemsProps={section} />
+                        case "service":
+                            return <Service key={section._key} serviceItems={section.serviceItems} />
+                        case "mediaModule":
+                            return <MediaModule key={section._key} mediaModuleItems={section}  />
+                        case "newsBlock":
+                            return <NewsBlock key={section._key} newsItem={section.newsItem} />
                       }
                     })}
-            <pre>
-                {JSON.stringify(data, undefined, 2)}
-            </pre>
         </div>
     )
 }

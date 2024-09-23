@@ -17,7 +17,7 @@ export type Props = ImageBlock;
 
 export default async function ImageBlock(params: ImageBlock) {
     return(
-        <div className="container mx-auto items-center justify-center flex py-10 px-8 md:px-0">
+        <div className="container mx-auto max-w-3xl items-center justify-center flex py-10 px-8 md:px-0">
             <Image
                 src={params.imageBlock.image ? urlFor(params.imageBlock.image).url(): ""}
                 alt={params.imageBlock.alt}
