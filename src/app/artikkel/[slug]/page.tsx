@@ -1,9 +1,9 @@
 import { client } from "@/app/utils/sanity/client";
-import { notFound } from "next/navigation";
 import { blogsBySlugQuery } from "@/app/utils/sanity/querys";
 import TextBlock from "@/app/components/blog/TextBlock";
 import ImageBlock from "@/app/components/blog/ImageBlock";
 import Membership from "@/app/components/static/Membership";
+import NotFound from "@/app/components/static/NotFound";
 
 
 interface PageProps {
@@ -24,7 +24,7 @@ export default async function blogBySlugRoute(props: PageProps) {
     );
   
     if (!data) {
-      return notFound();
+      return NotFound();
     }
   
     return (

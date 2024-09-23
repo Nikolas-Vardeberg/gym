@@ -2,6 +2,7 @@ import { Hero } from "./components/Hero"
 import { MediaModule } from "./components/MediaModule"
 import { NewsBlock } from "./components/NewsBlock"
 import { Service } from "./components/Service"
+import NotFound from "./components/static/NotFound"
 import { client } from "./utils/sanity/client"
 import { getHomePageQuery } from "./utils/sanity/querys"
 
@@ -10,7 +11,7 @@ export default async function homePageRoute() {
     })
 
     if (!data) {
-        return <h1>Create a page in sanity</h1>
+        return NotFound();
     }
 
     console.log(data)

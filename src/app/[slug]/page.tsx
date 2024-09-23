@@ -1,10 +1,10 @@
-import { notFound } from "next/navigation";
 import { client } from "../utils/sanity/client";
 import { pagesBySlugQuery } from "../utils/sanity/querys";
 import { Service } from "../components/Service";
 import { NewsBlock } from "../components/NewsBlock";
 import { MediaModule } from "../components/MediaModule";
 import { Hero } from "../components/Hero";
+import NotFound from "../components/static/NotFound";
 
 interface PageProps {
   params: { slug: string };
@@ -24,7 +24,7 @@ export default async function PageSlugRoute(props: PageProps) {
   );
 
   if (!data) {
-    return notFound();
+    return NotFound();
   }
 
   return (
