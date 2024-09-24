@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkLoaded, ClerkProvider } from '@clerk/nextjs'
 import Footer from './components/global/Footer'
+import Navigation from './components/global/Navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className={`${inter.className} bg-[#FAE8FF]`}>{children}<Footer /></body>
+      <body className={`${inter.className} bg-[#FAE8FF]`}><ClerkLoaded><Navigation />{children}<Footer /></ClerkLoaded></body>
     </html>
     </ClerkProvider>
   )

@@ -28,20 +28,22 @@ export const Service = ({serviceItems}: Props) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-6 justify-between">
                     {serviceItems?.map((items, i) => {
                         return(
-                            <div className="w-full h-full flex flex-col flex-grow mx-auto" key={i}>
-                                <Image
-                                    alt={items.imageBlock.alt}
-                                    className="object-cover w-full h-[350px]"
-                                    src={items.imageBlock.image ? urlFor(items.imageBlock.image).url(): ""}
-                                    width={300}
-                                    height={300}
-                                />
+                            <div className="w-full h-full flex flex-col flex-grow mx-auto group overflow-hidden" key={i}>
+                                <div className="relative h-[350px] overflow-hidden">
+                                    <Image
+                                        alt={items.imageBlock.alt}
+                                        className="object-cover w-full h-[350px] transform transition-transform duration-300 group-hover:scale-125  aspect-square"
+                                        src={items.imageBlock.image ? urlFor(items.imageBlock.image).url(): ""}
+                                        width={300}
+                                        height={300}
+                                    />
+                                </div>
                                 <div className="py-4 flex pr-7 items-start justify-start">
                                     <div className="flex justify-between items-center w-full flex-grow">
                                         <h3 className="font-bold text-xl text-black">{items.heading}</h3>
 
                                         {items.cta && (
-                                            <Link href={items.cta.url} className={`items-center outline-none min-w-fit px-3 h-0 py-5 justify-center flex rounded-full text-purple-800 transition-all duration-300 ${items.cta.hasPrimaryCta ? "bg-purple-300 hover:text-white hover:bg-purple-500" : "bg-inherit"}`}
+                                            <Link href={items.cta.url} className={`items-center outline-none min-w-fit px-3 h-0 py-5 justify-center flex rounded-full text-purple-800 transition-all duration-300 ${items.cta.hasPrimaryCta ? "bg-purple-300 group-hover:text-white group-hover:bg-purple-500" : "bg-inherit"}`}
                                             >
                                             {items.cta.text}
                                         </Link>

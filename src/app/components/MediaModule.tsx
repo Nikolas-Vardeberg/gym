@@ -32,7 +32,7 @@ export const MediaModule = ({mediaModuleItems}: Props) => {
 
             {
                     itemsArray.map((t, x) => (
-                        <div key={x} className="grid grid-cols-1 lg:grid-cols-2 mx-auto justify-between overflow-hidden items-center bg-purple-200 border-purple-800 border rounded-lg">
+                        <div key={x} className="grid grid-cols-1 lg:grid-cols-2 group mx-auto justify-between overflow-hidden items-center bg-purple-200 border-purple-800 border rounded-lg">
                         <div className="w-full bg-green-500">
                             <Image 
                                 alt={t.imageBlock.alt}
@@ -43,10 +43,10 @@ export const MediaModule = ({mediaModuleItems}: Props) => {
                             />
                         </div>
                         <div className="w-full items-center lg:items-start flex flex-col gap-4 p-8 space-y-4 flex-grow">
-                            <h2 className="text-purple-950 text-3xl leading-normal text-center lg:text-start font-bold">{t.heading}</h2>
+                            <h2 className="text-purple-950 text-5xl leading-normal text-center lg:text-start font-bold">{t.heading}</h2>
                             <p className="text-purple-950 text-base text-center lg:text-start font-medium leading-snug">{t.body}</p>
     
-                            <Link href={t.cta.url} className={`items-center outline-none min-w-fit px-5 h-0 py-5 justify-center flex font-bold rounded-full transition-all duration-300 text-purple-800 ${t.cta.hasPrimaryCta ? "bg-purple-300 hover:bg-purple-800 hover:text-purple-300" : "bg-inherit"}`}>
+                            <Link href={t.cta.url} className={`items-center group outline-none min-w-fit px-5 h-0 py-5 justify-center flex font-bold rounded-full transition-all duration-300 text-purple-800 ${t.cta.hasPrimaryCta ? "bg-purple-300 group-hover:text-purple-300 group-hover:bg-purple-800 hover:text-purple-300" : "bg-inherit"}`}>
                                 {t.cta.text}    
                             </Link>
     

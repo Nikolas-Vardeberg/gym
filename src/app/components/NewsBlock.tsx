@@ -30,17 +30,17 @@ export const NewsBlock = ({newsItem}: Props) => {
                     {newsItem?.map((i: any, x: any) => {
                         return(
                             <div key={x} className="w-full h-full flex flex-col overflow-hidden transition-all hover:scale-105 duration-200 group gap-3">
-                                <Image
-                                alt={i.imageBlock.alt}
-                                className="object-cover w-full h-[350px] aspect-square"
-                                src={
-                                    i.imageBlock.image
-                                    ? urlFor(i.imageBlock.image).url()
-                                    : ""
-                                }
-                                width={300}
-                                height={300}
-                                />
+                                    <Image
+                                        alt={i.imageBlock.alt}
+                                        className="object-cover w-full h-[350px] aspect-square"
+                                        src={
+                                            i.imageBlock.image
+                                            ? urlFor(i.imageBlock.image).url()
+                                            : ""
+                                        }
+                                        width={300}
+                                        height={300}
+                                    />
                                 <div className="flex flex-col gap-3 items-start justify-center mx-auto bg-inherit ">
                                     <div className="flex-row inline-flex flex-grow gap-1 w-full">
                                         {i.parents?.map((t: any) => (

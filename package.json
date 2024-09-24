@@ -16,6 +16,8 @@
     "@neondatabase/serverless": "^0.9.5",
     "@portabletext/react": "^3.1.0",
     "@sanity/client": "^6.21.3",
+    "@smakss/react-scroll-direction": "^4.2.0",
+    "classnames": "^2.5.1",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.33.0",
     "next": "14.0.0",
