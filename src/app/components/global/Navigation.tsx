@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Navigation = () => {
     return(
-        <header className="fixed z-10 w-full mx-auto bg-white items-center justify-center px-8 md:px-0 transition-all duration-300">
+        <header className="absolute z-10 w-full mx-auto bg-transparent items-center justify-center px-8 md:px-0 transition-all duration-300">
             <div className="container mx-auto items-center justify-center">
-                <div className="w-full relative flex items-center justify-between mx-auto py-5">
+                <div className="w-full relative flex items-center justify-between mx-auto py-5 text-white">
 
                     <Link href="/" className=" font-bold text-lg">
                         Gym
